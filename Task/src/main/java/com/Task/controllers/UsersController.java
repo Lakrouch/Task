@@ -22,4 +22,11 @@ public class UsersController {
                     user.getMobile());
         }
     }
+
+    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    public void getUserInfo(@RequestParam String email){
+        User user = userRepository.findUserByEmail(email);
+        System.out.println(user.getId()+","+user.getName()+","+user.getSecondName()+","+user.getEmail()+","
+                +user.getRole()+","+user.getMobile());
+    }
 }

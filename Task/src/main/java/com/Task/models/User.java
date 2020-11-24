@@ -4,6 +4,7 @@ import lombok.*;
 import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 
 @Getter
@@ -20,11 +21,15 @@ public class User {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "profilesIdSeq")
     private Long id;
 
+    @Size(min = 2, max = 50)
     private String name;
+    @Size(min = 2, max = 50)
     private String secondName;
+    @Size(min = 2, max = 50)
     private String email;
-
+    @Size(min = 2, max = 50)
     private String role;
+    @Size(min = 13, max = 13)
     private String mobile;
 
     public User(String name, String second_name, String email, String role, String mobile) {
