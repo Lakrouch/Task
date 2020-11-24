@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS profiles
+(
+    id INTEGER PRIMARY KEY ,
+    name VARCHAR(200) NOT NULL ,
+    second_name VARCHAR(250) NOT NULL ,
+    email VARCHAR(250) NOT NULL ,
+    role VARCHAR(250) NOT NULL ,
+    mobile VARCHAR(20) NOT NULL
+);
+
+CREATE SEQUENCE profiles_id_seq START WITH 2 INCREMENT BY 1
