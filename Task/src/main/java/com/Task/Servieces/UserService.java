@@ -12,19 +12,12 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
-    private User user;
 
     public User createUser(String name, String secondname, String email, String role, String mobile){
 
         User user = new User(name, secondname, email, role, mobile);
 
         return user;
-    }
-
-    public void deleteUser(String email){
-        System.out.println(email);
-        user =(User) userRepository.findUserByEmail(email);
-        userRepository.deleteUserById(user.getId());
     }
 
 }
